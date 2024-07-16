@@ -61,7 +61,6 @@ export const AddToCartButtonWrapper = styled.div`
 `
 
 export const AddToCartButton = styled.button`
-  cursor: pointer;
   border: none;
   border-radius: 5px;
   height: 40px;
@@ -69,6 +68,25 @@ export const AddToCartButton = styled.button`
 
   background-color: blue;
   color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+
+  svg {
+    font-size: .7rem;
+  }
+`
+
+export const RemoveFromCartButton = styled.button`
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+
+  background-color: violet;
+  color: black;
 
   display: flex;
   align-items: center;

@@ -29,7 +29,6 @@ interface AuthButtonProps {
   isLogged: boolean
 }
 export const AuthButton = styled.button<AuthButtonProps>`
-  cursor: pointer;
   border: none;
   border-radius: 5px;
   height: 30px;

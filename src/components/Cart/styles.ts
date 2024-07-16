@@ -29,3 +29,23 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1``
 
+export const CartProductsList = styled.ul`
+  list-style: none;
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`
+
+export const CartProductItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 1rem;
+`
+
+export const CartTotal = styled.strong`
+
+`
