@@ -9,10 +9,12 @@ import { login, logout } from "../../redux/User/user-slice";
 
 export const Header: React.FC = () => {
   const { user } = useSelector((rootReducer: RootReducer) => rootReducer.userReducer)
+  const { cart } = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
   const dispatch = useDispatch()
 
   const [showCart, setShowCart] = useState(false)
   const isLogged = user !== null
+  
 
   function handleUserAuth() {
     if (user === null) {
@@ -45,7 +47,8 @@ export const Header: React.FC = () => {
 
       <Cart 
         showCart={showCart}
-        closeCart={() => setShowCart(false)}  
+        closeCart={() => setShowCart(false)}
+        cart={cart}
       />
     </S.StyledHeader>
   );

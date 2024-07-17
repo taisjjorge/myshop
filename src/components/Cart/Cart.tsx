@@ -1,17 +1,17 @@
 import { IoMdClose } from 'react-icons/io';
 import * as S from './styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootReducer } from '../../redux/root-reducer';
+import { useDispatch } from 'react-redux';
 import { removeProduct } from '../../redux/Cart/cart-slice';
+import { Product } from '../../data/products';
 
 interface CartProps{
   showCart: boolean;
   closeCart: () => void;
+  cart: Product[]
 }
-export const Cart: React.FC<CartProps> = ({ showCart, closeCart }) => {
+export const Cart: React.FC<CartProps> = ({ showCart, closeCart, cart }) => {
   const dispatch = useDispatch()
   
-  const { cart } = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
   const total = cart.reduce((acc, product) => acc + product.price, 0)
 
   return (
@@ -29,7 +29,7 @@ export const Cart: React.FC<CartProps> = ({ showCart, closeCart }) => {
           </S.CartProductItem>
         ))}
       </S.CartProductsList>
-      <S.CartTotal>Total: ${total}</S.CartTotal>
+      <S.CartTotal data-testid="total">Total: ${total}</S.CartTotal>
     </S.Container>
   );
 }
