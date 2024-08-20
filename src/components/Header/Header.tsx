@@ -11,6 +11,7 @@ export const Header: React.FC = () => {
   const { user } = useSelector((rootReducer: RootReducer) => rootReducer.userReducer)
   const { cart } = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
   const dispatch = useDispatch()
+  console.log(cart)
 
   const [showCart, setShowCart] = useState(false)
   const isLogged = user !== null
@@ -41,6 +42,7 @@ export const Header: React.FC = () => {
           <S.CartButton onClick={() => setShowCart(!showCart)}>
             Cart
             <FiShoppingCart />
+            {cart.length === 0 ? '' : `(${cart.length})`}
           </S.CartButton>
         </S.ButtonsWrapper>
       </S.Wrapper>
